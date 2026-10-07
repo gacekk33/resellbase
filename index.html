@@ -3,7 +3,6 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>ResellBase | Geniusz Resell</title>
 
 <style>
@@ -16,7 +15,6 @@
 :root {
     --bg: #070807;
     --card: #101210;
-    --card2: #151815;
     --green: #64ff72;
     --green2: #2bdc50;
     --text: #f5f5f5;
@@ -24,8 +22,12 @@
     --border: #252925;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
-    font-family: Inter, Arial, sans-serif;
+    font-family: Arial, sans-serif;
     background:
         radial-gradient(circle at 50% 0%, rgba(70,255,90,.10), transparent 35%),
         var(--bg);
@@ -33,7 +35,9 @@ body {
     min-height: 100vh;
 }
 
-/* LOGIN */
+/* =========================
+   LOGOWANIE
+========================= */
 
 #loginPage {
     min-height: 100vh;
@@ -46,7 +50,7 @@ body {
 .login-box {
     width: 100%;
     max-width: 430px;
-    background: rgba(16,18,16,.96);
+    background: #101210;
     border: 1px solid var(--border);
     border-radius: 24px;
     padding: 38px 30px;
@@ -54,52 +58,50 @@ body {
 }
 
 .logo {
-    width: 68px;
-    height: 68px;
-    border-radius: 18px;
+    width: 70px;
+    height: 70px;
     margin: 0 auto 18px;
-    background: linear-gradient(135deg, var(--green), var(--green2));
-    color: #061007;
+    border-radius: 20px;
     display: flex;
-    align-items: center;
     justify-content: center;
-    font-size: 34px;
-    box-shadow: 0 0 35px rgba(70,255,90,.18);
+    align-items: center;
+    font-size: 35px;
+    background: linear-gradient(135deg, var(--green), var(--green2));
+    box-shadow: 0 0 30px rgba(100,255,114,.18);
 }
 
 .login-box h1 {
     text-align: center;
-    font-size: 30px;
+    font-size: 31px;
 }
 
-.login-box h1 span {
+.green {
     color: var(--green);
 }
 
 .subtitle {
-    color: var(--muted);
     text-align: center;
-    margin: 10px 0 30px;
-    line-height: 1.5;
+    color: var(--muted);
+    line-height: 1.6;
+    margin: 12px 0 30px;
 }
 
 label {
     display: block;
-    font-size: 13px;
-    color: #c8cec9;
     margin-bottom: 8px;
+    color: #d2d7d3;
+    font-size: 13px;
 }
 
 input {
     width: 100%;
-    background: #090b09;
+    background: #080a08;
     border: 1px solid #292e29;
-    color: white;
-    padding: 16px;
     border-radius: 12px;
-    outline: none;
+    padding: 16px;
+    color: white;
     font-size: 16px;
-    transition: .2s;
+    outline: none;
 }
 
 input:focus {
@@ -109,32 +111,32 @@ input:focus {
 
 button {
     width: 100%;
-    border: none;
-    background: var(--green);
-    color: #061007;
-    font-size: 15px;
-    font-weight: 800;
-    padding: 15px;
-    border-radius: 12px;
-    cursor: pointer;
     margin-top: 14px;
-    transition: .2s;
+    padding: 16px;
+    border: none;
+    border-radius: 12px;
+    background: var(--green);
+    color: #051006;
+    font-size: 15px;
+    font-weight: 900;
+    cursor: pointer;
 }
 
 button:hover {
-    transform: translateY(-1px);
     filter: brightness(1.08);
 }
 
 #error {
-    color: #ff6666;
-    font-size: 13px;
+    color: #ff6565;
     min-height: 20px;
     text-align: center;
+    font-size: 13px;
     margin-top: 15px;
 }
 
-/* EBOOK */
+/* =========================
+   EBOOK
+========================= */
 
 #ebookPage {
     display: none;
@@ -143,9 +145,9 @@ button:hover {
 nav {
     position: sticky;
     top: 0;
-    z-index: 10;
+    z-index: 100;
+    background: rgba(7,8,7,.9);
     backdrop-filter: blur(15px);
-    background: rgba(7,8,7,.85);
     border-bottom: 1px solid var(--border);
 }
 
@@ -159,53 +161,44 @@ nav {
 }
 
 .brand {
-    font-weight: 900;
     font-size: 20px;
+    font-weight: 900;
 }
 
-.brand span {
-    color: var(--green);
-}
-
-.progress {
-    font-size: 12px;
+.nav-title {
     color: var(--muted);
+    font-size: 13px;
 }
 
 .hero {
     max-width: 900px;
     margin: auto;
-    padding: 80px 22px 55px;
+    padding: 80px 22px 60px;
 }
 
 .badge {
     display: inline-block;
-    padding: 7px 12px;
-    border: 1px solid rgba(100,255,114,.25);
-    color: var(--green);
+    border: 1px solid rgba(100,255,114,.3);
     background: rgba(100,255,114,.06);
+    color: var(--green);
     border-radius: 100px;
+    padding: 8px 13px;
     font-size: 12px;
-    font-weight: 700;
-    margin-bottom: 20px;
+    font-weight: bold;
+    margin-bottom: 22px;
 }
 
 .hero h1 {
-    font-size: clamp(42px, 9vw, 75px);
+    font-size: clamp(45px, 10vw, 80px);
     line-height: .95;
-    letter-spacing: -3px;
-    max-width: 700px;
-}
-
-.hero h1 span {
-    color: var(--green);
+    letter-spacing: -4px;
 }
 
 .hero p {
-    max-width: 600px;
+    max-width: 650px;
     color: var(--muted);
+    line-height: 1.8;
     font-size: 18px;
-    line-height: 1.7;
     margin-top: 25px;
 }
 
@@ -216,27 +209,27 @@ nav {
 }
 
 .chapter {
-    padding: 45px 0;
+    padding: 48px 0;
     border-top: 1px solid var(--border);
 }
 
 .chapter-number {
     color: var(--green);
     font-size: 12px;
-    font-weight: 800;
+    font-weight: 900;
     letter-spacing: 2px;
-    margin-bottom: 10px;
+    margin-bottom: 12px;
 }
 
 .chapter h2 {
-    font-size: 30px;
-    margin-bottom: 22px;
+    font-size: 31px;
+    margin-bottom: 23px;
 }
 
 .chapter p {
-    color: #c6cbc7;
+    color: #c8cdc9;
     font-size: 17px;
-    line-height: 1.85;
+    line-height: 1.9;
     margin-bottom: 18px;
 }
 
@@ -244,27 +237,24 @@ nav {
     background: var(--card);
     border: 1px solid var(--border);
     border-left: 3px solid var(--green);
+    padding: 22px;
     border-radius: 12px;
-    padding: 20px;
+    line-height: 1.9;
     margin: 25px 0;
-    line-height: 1.8;
-    color: #d8ddd9;
 }
 
 .quote {
-    font-size: 23px !important;
-    font-weight: 800;
+    font-size: 22px !important;
     color: white !important;
+    font-weight: 800;
 }
 
 footer {
     border-top: 1px solid var(--border);
     text-align: center;
-    color: var(--muted);
     padding: 35px 20px;
+    color: var(--muted);
 }
-
-/* MOBILE */
 
 @media(max-width:600px) {
     .login-box {
@@ -282,62 +272,71 @@ footer {
     .chapter h2 {
         font-size: 26px;
     }
+
+    .nav-title {
+        display: none;
+    }
 }
 </style>
 </head>
 
 <body>
 
-<!-- ==============================
-     KODY DOSTĘPU ZMIENIASZ W JS
-================================ -->
+<!-- =========================
+     LOGOWANIE
+========================= -->
 
 <section id="loginPage">
 
 <div class="login-box">
 
-<div class="logo">🧠</div>
+    <div class="logo">🧠</div>
 
-<h1>Resell<span>Base</span></h1>
+    <h1>
+        Resell<span class="green">Base</span>
+    </h1>
 
-<p class="subtitle">
-Zaloguj się kodem otrzymanym po zakupie ebooka
-<strong>Geniusz Resell</strong>.
-</p>
+    <p class="subtitle">
+        Wpisz swój indywidualny kod dostępu,
+        aby otworzyć ebook <strong>Geniusz Resell</strong>.
+    </p>
 
-<label for="code">Kod dostępu</label>
+    <label for="code">Kod dostępu</label>
 
-<input
-id="code"
-type="password"
-placeholder="Wpisz swój kod"
-autocomplete="off"
->
+    <input
+        type="password"
+        id="code"
+        placeholder="Wpisz kod..."
+        autocomplete="off"
+    >
 
-<button onclick="login()">
-OTWÓRZ EBOOK
-</button>
+    <button id="loginButton">
+        OTWÓRZ EBOOK
+    </button>
 
-<div id="error"></div>
+    <div id="error"></div>
 
 </div>
+
 </section>
 
 
-<!-- EBOOK -->
+<!-- =========================
+     EBOOK
+========================= -->
 
 <section id="ebookPage">
 
 <nav>
 <div class="nav-inner">
 
-<div class="brand">
-Resell<span>Base</span>
-</div>
+    <div class="brand">
+        Resell<span class="green">Base</span>
+    </div>
 
-<div class="progress">
-🧠 Geniusz Resell
-</div>
+    <div class="nav-title">
+        🧠 Geniusz Resell
+    </div>
 
 </div>
 </nav>
@@ -345,20 +344,21 @@ Resell<span>Base</span>
 
 <header class="hero">
 
-<div class="badge">
-EBOOK RESELLBASE
-</div>
+    <div class="badge">
+        EBOOK RESELLBASE
+    </div>
 
-<h1>
-GENIUSZ<br>
-<span>RESELL</span>
-</h1>
+    <h1>
+        GENIUSZ<br>
+        <span class="green">RESELL</span>
+    </h1>
 
-<p>
-Od podstaw resellu do świadomego wyszukiwania okazji,
-wyceniania produktów, sprzedaży i rozwijania własnego
-systemu działania.
-</p>
+    <p>
+        Kompletny poradnik dla osób, które chcą
+        zrozumieć resell, nauczyć się wyszukiwać
+        okazje, poprawnie liczyć zysk i świadomie
+        rozwijać sprzedaż.
+    </p>
 
 </header>
 
@@ -379,7 +379,7 @@ Twoim zyskiem.
 </p>
 
 <p>
-Gdyby jednak wystarczyło kupować tanio i wystawiać
+Gdyby jednak wystarczyło kupować tanio i sprzedawać
 drożej, praktycznie każdy reseller regularnie
 zarabiałby pieniądze.
 </p>
@@ -400,29 +400,28 @@ kosztów oraz cierpliwość.
 <h2>Czym naprawdę jest resell?</h2>
 
 <p>
-Resell to odsprzedaż produktu. Szukasz przedmiotu,
-którego cena zakupu jest niższa od kwoty, za którą
-Twoim zdaniem można go później sprzedać.
+Resell to odsprzedaż. Kupujesz produkt, którego
+wartość rynkowa jest wyższa od ceny, za którą
+udało Ci się go zdobyć.
 </p>
 
 <div class="example">
 
 <strong>Przykład</strong><br><br>
 
-Cena produktu: 80 zł<br>
+Cena zakupu: 80 zł<br>
 Cena sprzedaży: 135 zł<br>
 Różnica: 55 zł
 
 </div>
 
 <p>
-Nie oznacza to jednak automatycznie 55 zł zysku.
-Musisz uwzględnić dostawę, materiały do pakowania,
-opłaty platformy oraz wszystkie pozostałe koszty.
+Nie oznacza to jednak automatycznie 55 zł czystego
+zysku. Trzeba uwzględnić wszystkie dodatkowe koszty.
 </p>
 
 <p class="quote">
-Obrót wygląda dobrze na screenie. Zysk jest tym,
+Duży obrót wygląda dobrze. Zysk jest tym,
 co naprawdę ma znaczenie.
 </p>
 
@@ -433,25 +432,23 @@ co naprawdę ma znaczenie.
 
 <div class="chapter-number">ROZDZIAŁ 02</div>
 
-<h2>Dlaczego ludzie kupują od resellerów?</h2>
+<h2>Dlaczego ktoś kupuje od resellera?</h2>
 
 <p>
-Jednym z powodów jest czas. Ty możesz przez kilka dni
-obserwować rynek i znaleźć dobrą ofertę. Kupujący
-często chce po prostu znaleźć produkt i zamówić go
-od razu.
+Jednym z najważniejszych powodów jest czas.
+Ty możesz obserwować rynek przez kilka dni,
+aż znajdziesz dobrą ofertę.
 </p>
 
 <p>
-Drugim elementem jest wiedza. Osoba znająca konkretny
-rynek potrafi szybciej znaleźć produkty, których inni
-nawet nie zauważą.
+Kupujący często chce po prostu wejść na platformę,
+znaleźć odpowiedni produkt i kupić go od razu.
 </p>
 
 <p>
-Znaczenie ma również wygoda. Dobre zdjęcia, konkretny
-opis, szybka odpowiedź oraz sprawna wysyłka zwiększają
-wartość Twojej oferty.
+Znaczenie ma również wiedza. Jeżeli dobrze znasz
+konkretną kategorię, możesz zauważyć okazję,
+której ktoś inny nie zauważy.
 </p>
 
 </section>
@@ -461,22 +458,21 @@ wartość Twojej oferty.
 
 <div class="chapter-number">ROZDZIAŁ 03</div>
 
-<h2>Nie każda przecena jest okazją</h2>
+<h2>Nie każda niska cena jest okazją</h2>
 
 <p>
-Produkt kosztował kiedyś 500 zł, a ktoś wystawia go
-za 200 zł. Na pierwszy rzut oka wygląda świetnie.
+Produkt kosztował kiedyś 500 zł, a ktoś sprzedaje
+go za 200 zł. Brzmi świetnie.
 </p>
 
 <p>
-Jeżeli jednak rynek jest pełny identycznych produktów
-za około 210 zł, praktycznie nie masz przestrzeni
-na zarobek.
+Problem pojawia się wtedy, gdy identyczne produkty
+są dostępne na rynku za 210 lub 220 zł.
 </p>
 
 <p>
-Przed zakupem sprawdź realne ceny rynkowe, popyt,
-stan produktu oraz wszystkie dodatkowe koszty.
+Cena katalogowa nie jest najważniejsza.
+Liczy się aktualna cena rynkowa.
 </p>
 
 </section>
@@ -486,18 +482,17 @@ stan produktu oraz wszystkie dodatkowe koszty.
 
 <div class="chapter-number">ROZDZIAŁ 04</div>
 
-<h2>Wybierz swoją kategorię</h2>
+<h2>Wybierz kategorię</h2>
 
 <p>
-Nie próbuj od początku znać się na wszystkim.
-Elektronika, sneakersy, ubrania i przedmioty
-kolekcjonerskie to zupełnie różne rynki.
+Nie próbuj znać się na wszystkim.
+Elektronika, ubrania, sneakersy czy przedmioty
+kolekcjonerskie to zupełnie inne rynki.
 </p>
 
 <p>
-Najlepiej zacząć od kategorii, którą już się
-interesujesz. Dzięki temu szybciej nauczysz się
-rozpoznawać nietypowe ceny.
+Na początku najlepiej wybrać jedną lub dwie
+kategorie i dokładnie obserwować ceny.
 </p>
 
 </section>
@@ -507,7 +502,7 @@ rozpoznawać nietypowe ceny.
 
 <div class="chapter-number">ROZDZIAŁ 05</div>
 
-<h2>Jak sprawdzać cenę?</h2>
+<h2>Jak sprawdzać ceny?</h2>
 
 <p>
 Nigdy nie oceniaj wartości produktu na podstawie
@@ -516,23 +511,18 @@ jednego ogłoszenia.
 
 <div class="example">
 
-Przykładowe ceny:<br><br>
-
 199 zł<br>
 210 zł<br>
 220 zł<br>
 225 zł<br>
-230 zł<br><br>
-
-Jeżeli jedno dodatkowe ogłoszenie kosztuje 450 zł,
-nie oznacza to, że produkt jest wart 450 zł.
+230 zł
 
 </div>
 
 <p>
-Szczególnie wartościowe są informacje o faktycznie
-zakończonych sprzedażach, jeżeli dana platforma je
-udostępnia.
+Jeżeli większość ofert znajduje się w tym przedziale,
+pojedyncza oferta za 450 zł nie oznacza,
+że produkt jest wart 450 zł.
 </p>
 
 </section>
@@ -551,18 +541,16 @@ Dostawa: 10 zł<br>
 Opakowanie: 3 zł<br>
 Pozostałe koszty: 7 zł<br><br>
 
-<strong>Łączny koszt: 170 zł</strong><br><br>
+Łączny koszt: <strong>170 zł</strong><br>
+Sprzedaż: <strong>200 zł</strong><br><br>
 
-Sprzedaż: 200 zł<br><br>
-
-<strong>Zysk: 30 zł</strong>
+Rzeczywisty zysk: <strong>30 zł</strong>
 
 </div>
 
 <p>
-Właśnie dlatego sama różnica między ceną widoczną
-w ogłoszeniu a planowaną ceną sprzedaży może być
-myląca.
+Dlatego przed każdym zakupem warto policzyć
+całą transakcję.
 </p>
 
 </section>
@@ -575,18 +563,19 @@ myląca.
 <h2>ROI</h2>
 
 <p>
-ROI pozwala spojrzeć na zysk względem pieniędzy,
+ROI pokazuje zysk w stosunku do pieniędzy,
 które musiałeś zainwestować.
 </p>
 
 <p>
-Jeżeli inwestujesz 100 zł i zarabiasz 20 zł,
-Twój zwrot wynosi 20% względem zainwestowanej kwoty.
+Jeżeli wydajesz 100 zł i zarabiasz 20 zł,
+osiągasz zwrot odpowiadający 20% zainwestowanej
+kwoty.
 </p>
 
 <p>
-Nie patrz jednak wyłącznie na procent. Liczy się
-również czas sprzedaży, ryzyko oraz ilość pracy.
+Nie patrz jednak tylko na procent.
+Znaczenie ma również czas sprzedaży i ryzyko.
 </p>
 
 </section>
@@ -599,15 +588,14 @@ również czas sprzedaży, ryzyko oraz ilość pracy.
 <h2>Rotacja kapitału</h2>
 
 <p>
-Produkt dający 100 zł zysku, który sprzedaje się
-przez dwa miesiące, nie zawsze będzie lepszy od
-produktu dającego 30 zł zysku sprzedawanego
-regularnie co kilka dni.
+Produkt dający 100 zł zysku po dwóch miesiącach
+nie zawsze jest lepszy od produktu dającego
+30 zł zysku co kilka dni.
 </p>
 
 <p>
-Pieniądze znajdujące się w niesprzedanym produkcie
-są zamrożone.
+Kapitał znajdujący się w niesprzedanym produkcie
+jest zamrożony.
 </p>
 
 </section>
@@ -617,21 +605,22 @@ są zamrożone.
 
 <div class="chapter-number">ROZDZIAŁ 09</div>
 
-<h2>Negocjacje</h2>
+<h2>Gdzie szukać okazji?</h2>
 
 <p>
-Nie potrzebujesz żadnych magicznych technik.
-Możesz normalnie zaproponować sprzedającemu cenę,
-która nadal ma sens dla obu stron.
+Nie istnieje jedna magiczna strona posiadająca
+wyłącznie produkty idealne do resellu.
 </p>
 
-<div class="example">
-„Hej, byłaby możliwość 270 zł? Mogę kupić dzisiaj.”
-</div>
+<p>
+Okazje możesz znaleźć na marketplace'ach,
+lokalnych ogłoszeniach, wyprzedażach oraz
+legalnych promocjach sklepów.
+</p>
 
 <p>
-Jeżeli sprzedający odmówi, ponownie przelicz
-opłacalność i zdecyduj, czy nadal chcesz kupić.
+Przewagę daje przede wszystkim regularne
+obserwowanie rynku.
 </p>
 
 </section>
@@ -641,188 +630,17 @@ opłacalność i zdecyduj, czy nadal chcesz kupić.
 
 <div class="chapter-number">ROZDZIAŁ 10</div>
 
-<h2>Dobre ogłoszenie</h2>
+<h2>Naucz się odpuszczać</h2>
 
 <p>
-Zadbaj o jasne zdjęcia, proste tło oraz pokazanie
-produktu z kilku stron.
+Nie kupuj produktu tylko dlatego, że poświęciłeś
+już dużo czasu na jego analizę.
 </p>
 
 <p>
-Tytuł powinien jasno określać produkt. Zamiast
-„MEGA OKAZJA!!!” znacznie lepiej podać markę,
-model oraz najważniejsze parametry.
-</p>
-
-<p>
-Opis powinien przedstawiać rzeczywisty stan.
-Jeżeli produkt posiada wadę, poinformuj o niej.
-</p>
-
-</section>
-
-
-<section class="chapter">
-
-<div class="chapter-number">ROZDZIAŁ 11</div>
-
-<h2>Bezpieczeństwo</h2>
-
-<p>
-Nie klikaj przypadkowych linków wysyłanych przez
-kupujących i nigdy nie przekazuj haseł ani kodów
-uwierzytelniających.
-</p>
-
-<p>
-Informacje o płatności sprawdzaj bezpośrednio
-w oficjalnej aplikacji lub serwisie platformy.
-</p>
-
-<p>
-Uważaj również na podróbki. Jeżeli nie potrafisz
-potwierdzić autentyczności produktu, nie przedstawiaj
-go jako oryginalnego.
-</p>
-
-</section>
-
-
-<section class="chapter">
-
-<div class="chapter-number">ROZDZIAŁ 12</div>
-
-<h2>Pierwsze 100 zł</h2>
-
-<p>
-Nie potrzebujesz dużego budżetu, żeby nauczyć się
-procesu.
-</p>
-
-<p>
-Możesz zacząć od sprzedaży rzeczy, których już
-nie używasz. Dzięki temu poznasz tworzenie ogłoszeń,
-kontakt z klientami, pakowanie oraz wysyłkę.
-</p>
-
-</section>
-
-
-<section class="chapter">
-
-<div class="chapter-number">ROZDZIAŁ 13</div>
-
-<h2>Od 100 do 500 zł</h2>
-
-<p>
-Na tym etapie najważniejsze jest zbieranie danych.
-Nie każda transakcja będzie udana.
-</p>
-
-<p>
-Po sprzedaży zastanów się, dlaczego produkt sprzedał
-się szybko albo dlaczego długo czekał na klienta.
-</p>
-
-</section>
-
-
-<section class="chapter">
-
-<div class="chapter-number">ROZDZIAŁ 14</div>
-
-<h2>Pierwszy 1000 zł obrotu</h2>
-
-<p>
-Pamiętaj, że 1000 zł obrotu nie oznacza 1000 zł
-zarobku.
-</p>
-
-<p>
-Jeżeli produkty kosztowały Cię łącznie 800 zł
-i sprzedałeś je za 1000 zł, różnica wynosi 200 zł
-przed uwzględnieniem pozostałych kosztów.
-</p>
-
-</section>
-
-
-<section class="chapter">
-
-<div class="chapter-number">ROZDZIAŁ 15</div>
-
-<h2>Zapisuj każdą transakcję</h2>
-
-<p>
-Zapisuj cenę zakupu, wszystkie koszty, cenę sprzedaży,
-zysk oraz czas potrzebny na znalezienie klienta.
-</p>
-
-<p>
-Po kilkudziesięciu transakcjach będziesz posiadać
-własne dane pokazujące, które produkty naprawdę
-działają.
-</p>
-
-</section>
-
-
-<section class="chapter">
-
-<div class="chapter-number">ROZDZIAŁ 16</div>
-
-<h2>Skalowanie</h2>
-
-<p>
-Nie zwiększaj liczby produktów tylko dlatego,
-że masz większy budżet.
-</p>
-
-<p>
-Najpierw stwórz system, który działa przy małej
-liczbie transakcji. Dopiero później zwiększaj skalę.
-</p>
-
-</section>
-
-
-<section class="chapter">
-
-<div class="chapter-number">ROZDZIAŁ 17</div>
-
-<h2>Straty</h2>
-
-<p>
-Nie każda transakcja zakończy się zyskiem.
-Czasami rozsądniejsze będzie zaakceptowanie niewielkiej
-straty i odzyskanie kapitału niż czekanie miesiącami
-na nierealną cenę.
-</p>
-
-<p>
-Najważniejsze jest ustalenie, dlaczego popełniłeś
-błąd i jak uniknąć go następnym razem.
-</p>
-
-</section>
-
-
-<section class="chapter">
-
-<div class="chapter-number">ROZDZIAŁ 18</div>
-
-<h2>System oceny okazji</h2>
-
-<p>
-Przed zakupem sprawdź model, cenę rynkową, popyt,
-stan produktu, koszty oraz realistyczną cenę
-sprzedaży.
-</p>
-
-<p>
-Następnie zastanów się, co stanie się, jeżeli
-będziesz zmuszony sprzedać produkt taniej niż
-planowałeś.
+Jeżeli po dokładnym przeliczeniu transakcja
+przestaje wyglądać atrakcyjnie, możesz po prostu
+z niej zrezygnować.
 </p>
 
 <p class="quote">
@@ -835,23 +653,198 @@ której nie zrobiłeś.
 
 <section class="chapter">
 
+<div class="chapter-number">ROZDZIAŁ 11</div>
+
+<h2>Negocjacje</h2>
+
+<p>
+Cena wystawiona przez sprzedającego nie zawsze
+jest ceną końcową.
+</p>
+
+<div class="example">
+„Hej, byłaby możliwość 270 zł?
+Mogę kupić dzisiaj.”
+</div>
+
+<p>
+Nie potrzebujesz manipulacji ani dziwnych technik.
+Normalna propozycja często wystarczy.
+</p>
+
+</section>
+
+
+<section class="chapter">
+
+<div class="chapter-number">ROZDZIAŁ 12</div>
+
+<h2>Zdjęcia produktu</h2>
+
+<p>
+Nie potrzebujesz profesjonalnego aparatu.
+Telefon spokojnie wystarczy.
+</p>
+
+<p>
+Zadbaj o dobre światło, czyste tło i pokaż
+produkt z kilku stron.
+</p>
+
+<p>
+Jeżeli produkt posiada wadę, pokaż ją również
+na zdjęciu.
+</p>
+
+</section>
+
+
+<section class="chapter">
+
+<div class="chapter-number">ROZDZIAŁ 13</div>
+
+<h2>Tytuł ogłoszenia</h2>
+
+<p>
+Tytuł powinien pomagać klientowi znaleźć produkt.
+</p>
+
+<div class="example">
+
+Zamiast:<br><br>
+
+<strong>MEGA OKAZJA 🔥🔥🔥</strong>
+
+<br><br>
+
+lepiej:<br><br>
+
+<strong>Nike Air Force 1 białe rozmiar 42</strong>
+
+</div>
+
+</section>
+
+
+<section class="chapter">
+
+<div class="chapter-number">ROZDZIAŁ 14</div>
+
+<h2>Opis produktu</h2>
+
+<p>
+Opis powinien jasno przedstawiać stan produktu,
+jego wariant, zawartość zestawu oraz ewentualne
+wady.
+</p>
+
+<p>
+Nie ukrywaj uszkodzeń.
+Uczciwy opis ogranicza późniejsze problemy.
+</p>
+
+</section>
+
+
+<section class="chapter">
+
+<div class="chapter-number">ROZDZIAŁ 15</div>
+
+<h2>Ustalanie ceny</h2>
+
+<p>
+Możesz wystawić produkt trochę taniej od rynku,
+jeżeli zależy Ci na szybkiej sprzedaży.
+</p>
+
+<p>
+Możesz również ustawić cenę rynkową albo zostawić
+niewielką przestrzeń na negocjacje.
+</p>
+
+</section>
+
+
+<section class="chapter">
+
+<div class="chapter-number">ROZDZIAŁ 16</div>
+
+<h2>Zaufanie</h2>
+
+<p>
+Dobre zdjęcia, dokładny opis, szybkie odpowiedzi
+oraz pozytywne opinie zwiększają zaufanie klientów.
+</p>
+
+<p>
+Czasami kupujący zapłaci trochę więcej,
+jeżeli Twoja oferta wygląda znacznie bezpieczniej.
+</p>
+
+</section>
+
+
+<section class="chapter">
+
+<div class="chapter-number">ROZDZIAŁ 17</div>
+
+<h2>Bezpieczeństwo</h2>
+
+<p>
+Nie klikaj przypadkowych linków wysyłanych przez
+kupujących.
+</p>
+
+<p>
+Nigdy nie przekazuj haseł ani kodów logowania.
+Informacje o płatności sprawdzaj bezpośrednio
+w oficjalnej aplikacji platformy.
+</p>
+
+</section>
+
+
+<section class="chapter">
+
+<div class="chapter-number">ROZDZIAŁ 18</div>
+
+<h2>Podróbki</h2>
+
+<p>
+Jeżeli produkt markowy jest podejrzanie tani,
+dokładnie sprawdź jego autentyczność.
+</p>
+
+<p>
+Nie przedstawiaj podróbki jako oryginalnego
+produktu.
+</p>
+
+<p>
+Jeżeli nie znasz się na autentykacji danej
+kategorii, lepiej najpierw zdobyć odpowiednią
+wiedzę.
+</p>
+
+</section>
+
+
+<section class="chapter">
+
 <div class="chapter-number">ROZDZIAŁ 19</div>
 
-<h2>Plan pierwszych 30 dni</h2>
+<h2>Pierwsze 100 zł</h2>
 
 <p>
-Pierwszy tydzień wykorzystaj przede wszystkim
-na obserwowanie wybranej kategorii.
+Na początku nie potrzebujesz ogromnego budżetu.
+Możesz zacząć od sprzedaży rzeczy, których już
+nie używasz.
 </p>
 
 <p>
-W drugim tygodniu możesz przeprowadzić pierwsze
-małe transakcje.
-</p>
-
-<p>
-W trzecim przeanalizuj wyniki, a w czwartym popraw
-elementy, które działały najsłabiej.
+Najważniejsze jest poznanie całego procesu:
+wyceny, ogłoszenia, rozmowy z klientem,
+pakowania i wysyłki.
 </p>
 
 </section>
@@ -861,29 +854,264 @@ elementy, które działały najsłabiej.
 
 <div class="chapter-number">ROZDZIAŁ 20</div>
 
-<h2>Na koniec</h2>
+<h2>Od 100 do 500 zł</h2>
 
 <p>
-Dobry reseller nie kupuje wszystkiego, co wygląda
-tanio.
+Każdą zakończoną transakcję potraktuj jak źródło
+informacji.
 </p>
 
 <p>
-Rozumie rynek, kontroluje koszty, potrafi odpuścić
-słabą ofertę i wyciąga wnioski z poprzednich
-transakcji.
+Sprawdź, ile zarobiłeś, jak długo trwała sprzedaż
+i czy następnym razem podjąłbyś tę samą decyzję.
+</p>
+
+</section>
+
+
+<section class="chapter">
+
+<div class="chapter-number">ROZDZIAŁ 21</div>
+
+<h2>Pierwszy 1000 zł obrotu</h2>
+
+<p>
+1000 zł obrotu nie oznacza 1000 zł zarobku.
+</p>
+
+<div class="example">
+
+Koszt produktów: 800 zł<br>
+Sprzedaż: 1000 zł<br><br>
+
+Różnica: 200 zł przed pozostałymi kosztami.
+
+</div>
+
+</section>
+
+
+<section class="chapter">
+
+<div class="chapter-number">ROZDZIAŁ 22</div>
+
+<h2>Zapisuj wyniki</h2>
+
+<p>
+Zapisuj cenę zakupu, koszty, cenę sprzedaży,
+rzeczywisty zysk oraz czas potrzebny na sprzedaż.
+</p>
+
+<p>
+Po kilkudziesięciu transakcjach będziesz posiadać
+własne dane dotyczące rynku.
+</p>
+
+</section>
+
+
+<section class="chapter">
+
+<div class="chapter-number">ROZDZIAŁ 23</div>
+
+<h2>Reinwestowanie</h2>
+
+<p>
+Jeżeli chcesz zwiększać budżet przeznaczony
+na resell, możesz pozostawiać część zysków
+na kolejne zakupy.
+</p>
+
+<p>
+Dobrze jest oddzielić budżet na resell
+od swoich pozostałych pieniędzy.
+</p>
+
+</section>
+
+
+<section class="chapter">
+
+<div class="chapter-number">ROZDZIAŁ 24</div>
+
+<h2>Skalowanie</h2>
+
+<p>
+Więcej produktów oznacza więcej pracy.
+Przy większej liczbie transakcji potrzebujesz
+lepszego systemu.
+</p>
+
+<p>
+Kontroluj zakupy, aktywne ogłoszenia,
+sprzedane produkty oraz koszty.
+</p>
+
+</section>
+
+
+<section class="chapter">
+
+<div class="chapter-number">ROZDZIAŁ 25</div>
+
+<h2>Kiedy obniżyć cenę?</h2>
+
+<p>
+Jeżeli produkt długo się nie sprzedaje,
+najpierw ponownie sprawdź rynek.
+</p>
+
+<p>
+Problemem może być cena, ale również słabe zdjęcia,
+tytuł albo opis.
+</p>
+
+</section>
+
+
+<section class="chapter">
+
+<div class="chapter-number">ROZDZIAŁ 26</div>
+
+<h2>Strata jest częścią resellu</h2>
+
+<p>
+Nie każda transakcja zakończy się zyskiem.
+Czasami lepiej zaakceptować niewielką stratę
+i odzyskać większość kapitału.
+</p>
+
+<p>
+Najważniejsze jest zrozumienie, dlaczego dana
+transakcja nie wyszła zgodnie z planem.
+</p>
+
+</section>
+
+
+<section class="chapter">
+
+<div class="chapter-number">ROZDZIAŁ 27</div>
+
+<h2>Najczęstsze błędy</h2>
+
+<p>
+Kupowanie pod wpływem emocji, ignorowanie kosztów,
+brak sprawdzenia rynku oraz wydawanie całego
+budżetu na jeden produkt to częste błędy
+początkujących.
+</p>
+
+<p>
+Większość z nich można ograniczyć,
+jeżeli przed zakupem dasz sobie czas
+na dokładne przeliczenie transakcji.
+</p>
+
+</section>
+
+
+<section class="chapter">
+
+<div class="chapter-number">ROZDZIAŁ 28</div>
+
+<h2>Twój system oceny okazji</h2>
+
+<p>
+Sprawdź dokładny model produktu, jego stan,
+realną cenę rynkową, popyt oraz wszystkie koszty.
+</p>
+
+<p>
+Następnie ustal realistyczną cenę sprzedaży
+i policz potencjalny wynik.
+</p>
+
+<p>
+Zastanów się również, co stanie się,
+jeżeli będziesz musiał sprzedać taniej.
+</p>
+
+</section>
+
+
+<section class="chapter">
+
+<div class="chapter-number">ROZDZIAŁ 29</div>
+
+<h2>Plan pierwszych 30 dni</h2>
+
+<p>
+Pierwszy tydzień wykorzystaj głównie
+na obserwowanie wybranej kategorii.
+</p>
+
+<p>
+W drugim tygodniu możesz spróbować pierwszych
+małych transakcji.
+</p>
+
+<p>
+W trzecim przeanalizuj wyniki.
+W czwartym popraw elementy, które działały
+najsłabiej.
+</p>
+
+</section>
+
+
+<section class="chapter">
+
+<div class="chapter-number">ROZDZIAŁ 30</div>
+
+<h2>Prawo i podatki</h2>
+
+<p>
+Okazjonalna sprzedaż własnych rzeczy różni się
+od regularnego kupowania produktów specjalnie
+w celu dalszej odsprzedaży.
+</p>
+
+<p>
+Wraz ze wzrostem skali mogą pojawić się obowiązki
+prawne oraz podatkowe.
+</p>
+
+<p>
+Sprawdzaj aktualne przepisy i korzystaj
+z oficjalnych źródeł informacji.
+</p>
+
+</section>
+
+
+<section class="chapter">
+
+<div class="chapter-number">ZAKOŃCZENIE</div>
+
+<h2>Geniusz Resell</h2>
+
+<p>
+Dobry reseller nie zarabia dlatego,
+że kupuje wszystko, co wygląda tanio.
+</p>
+
+<p>
+Zarabia dlatego, że rozumie rynek,
+kontroluje koszty i wie, kiedy warto
+zrezygnować z zakupu.
 </p>
 
 <p class="quote">
-Pieniądze zarabiasz przede wszystkim w momencie
-dobrego zakupu, a nie podczas wystawiania produktu.
+Pieniądze zarabiasz przede wszystkim
+w momencie dobrego zakupu,
+a nie podczas wystawiania produktu.
 </p>
 
 <p>
-Regularna sprzedaż nastawiona na zarobek może wiązać
-się z obowiązkami prawnymi i podatkowymi. Zawsze
-sprawdzaj aktualne przepisy i zasady platform,
-z których korzystasz.
+Obserwuj rynek. Porównuj ceny.
+Licz koszty. Zapisuj wyniki.
+Wyciągaj wnioski z każdej transakcji.
 </p>
 
 </section>
@@ -891,7 +1119,7 @@ z których korzystasz.
 </main>
 
 <footer>
-© ResellBase • Geniusz Resell 🧠
+© 2026 ResellBase • Geniusz Resell 🧠
 </footer>
 
 </section>
@@ -899,87 +1127,93 @@ z których korzystasz.
 
 <script>
 
-/* =====================================================
+/* ==========================================
    KODY DOSTĘPU
 
-   Dodawaj kolejne kody w cudzysłowie i oddzielaj
-   je przecinkiem.
+   DODAWAJ KODY TUTAJ.
 
-   PRZYKŁAD:
-
+   Przykład:
    const ACCESS_CODES = [
-       "gaceklogin33",
+       "gaceklogin",
+       "kacper123",
+       "klient456"
    ];
-
-===================================================== */
+========================================== */
 
 const ACCESS_CODES = [
-
-    "gaceklogin33",
-
+    "gaceklogin"
 ];
 
 
-/* =====================================================
-   LOGOWANIE
-===================================================== */
+/* ==========================================
+   SYSTEM LOGOWANIA
+========================================== */
+
+const loginButton = document.getElementById("loginButton");
+const codeInput = document.getElementById("code");
+const errorBox = document.getElementById("error");
+
+
+function openEbook() {
+
+    document.getElementById("loginPage").style.display = "none";
+    document.getElementById("ebookPage").style.display = "block";
+
+    window.scrollTo({
+        top: 0,
+        behavior: "instant"
+    });
+}
+
 
 function login() {
 
-    const input = document
-        .getElementById("code")
-        .value
-        .trim();
+    const enteredCode = codeInput.value.trim();
 
-    const error = document.getElementById("error");
+    if (ACCESS_CODES.includes(enteredCode)) {
 
-    if (ACCESS_CODES.includes(input)) {
+        errorBox.textContent = "";
 
         sessionStorage.setItem(
             "resellbase_access",
-            "true"
+            "granted"
         );
 
         openEbook();
 
     } else {
 
-        error.textContent =
+        errorBox.textContent =
             "Nieprawidłowy kod dostępu.";
 
+        codeInput.value = "";
+        codeInput.focus();
     }
 }
 
 
-function openEbook() {
+/* KLIKNIĘCIE PRZYCISKU */
 
-    document.getElementById("loginPage").style.display = "none";
-
-    document.getElementById("ebookPage").style.display = "block";
-
-    window.scrollTo(0, 0);
-
-}
+loginButton.addEventListener("click", login);
 
 
 /* ENTER */
 
-document
-    .getElementById("code")
-    .addEventListener("keydown", function(event) {
+codeInput.addEventListener("keydown", function(event) {
 
-        if (event.key === "Enter") {
-            login();
-        }
+    if (event.key === "Enter") {
 
-    });
+        event.preventDefault();
+        login();
+    }
+});
 
 
-/* DOSTĘP W TEJ SAMEJ SESJI */
+/* JEŻELI JUŻ ZALOGOWANO W TEJ SESJI */
 
 if (
     sessionStorage.getItem("resellbase_access")
-    === "true"
+    === "granted"
 ) {
     openEbook();
 }
@@ -987,4 +1221,4 @@ if (
 </script>
 
 </body>
-  </html>
+    </html>
